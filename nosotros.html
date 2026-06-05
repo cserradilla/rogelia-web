@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rogelia — No somos una empresa de IA ni una consultora tradicional. Somos el puente entre las personas y la tecnología. Conocé al equipo, la historia y los valores.">
+<title>Rogelia — Nosotros</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20130%20150'%3E%3Cg%20stroke='%23C8893F'%20stroke-width='22'%20fill='none'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M30%2025%20V128'/%3E%3Cpath%20d='M30%2025%20H64%20C87%2025%2099%2037%2099%2051%20C99%2065%2087%2077%2064%2077%20H30'/%3E%3Cpath%20d='M58%2073%20L100%20128'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#17150F; --ink-2:#221F16; --ink-soft:#4A4438; --paper:#F4EFE6; --paper-2:#ECE3D2;
+  --arena:#E3D6BE; --ochre:#C8893F; --ochre-lite:#E7B070; --ochre-deep:#A2641F;
+  --line:rgba(23,21,15,.13); --good:#5E7A3A; --bad:#9E3B2E;
+  --serif:"Fraunces",Georgia,serif; --sans:"Hanken Grotesk",system-ui,sans-serif; --nav-h:70px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;font-size:17px;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+.eyebrow{font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--ochre-deep);
+  display:inline-flex;align-items:center;gap:12px;margin-bottom:22px}
+.eyebrow::before{content:"";width:26px;height:1px;background:currentColor}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,5vw,48px);line-height:1.05;letter-spacing:-.02em}
+h2 em{font-style:italic;color:var(--ochre-deep)}
+p{color:var(--ink-soft)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15.5px;padding:14px 26px;border-radius:100px;
+  transition:.25s ease;cursor:pointer;border:1px solid transparent}
+.btn-pri{background:var(--ink);color:var(--paper)}
+.btn-pri:hover{background:var(--ochre-deep);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink);background:rgba(23,21,15,.04)}
+.btn svg{width:15px;height:15px}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* NAV */
+header{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);display:flex;align-items:center;transition:.3s ease;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(244,239,230,.82);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;width:100%}
+.brand{display:flex;align-items:center;gap:11px;font-weight:600;font-size:21px;letter-spacing:-.01em}
+.brand svg{height:30px;width:auto}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-size:15px;color:var(--ink-soft);transition:.2s;font-weight:500}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.nav-links a.active{color:var(--ochre-deep)}
+.nav-cta{padding:10px 20px !important;font-size:14.5px !important;color:var(--paper) !important}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{width:24px;height:2px;background:var(--ink);transition:.3s}
+
+/* PAGE HERO */
+.phero{padding:calc(var(--nav-h) + 76px) 0 70px;position:relative;overflow:hidden}
+.phero::before{content:"";position:absolute;inset:0;background:radial-gradient(110% 80% at 90% 0%,rgba(200,137,63,.12),transparent 58%);pointer-events:none}
+.phero .wrap{position:relative;display:grid;grid-template-columns:1.3fr .7fr;gap:46px;align-items:center}
+.phero h1{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5.6vw,68px);line-height:1.02;letter-spacing:-.025em}
+.phero h1 em{font-style:italic;color:var(--ochre-deep)}
+.phero .neg{font-size:clamp(18px,2.2vw,22px);color:var(--ink-soft);margin-top:24px;max-width:46ch}
+.phero .neg b{color:var(--ink);font-weight:600}
+.phero-mark{display:flex;justify-content:center}
+.phero-mark svg{width:min(80%,250px);filter:drop-shadow(0 20px 44px rgba(23,21,15,.15))}
+
+/* STORY + NAME */
+.story{padding:90px 0;background:var(--paper-2)}
+.story .grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.story h2{margin-bottom:18px}
+.story p{font-size:18px;margin-bottom:16px;max-width:52ch}
+.tower{display:flex;flex-direction:column;gap:6px}
+.tower .lyr{height:50px;border-radius:8px;display:flex;align-items:center;padding-left:22px;color:var(--paper);
+  font-weight:600;font-size:14px;transform:translateX(38px);opacity:0;transition:.7s cubic-bezier(.2,.7,.2,1)}
+.tower.in .lyr{transform:none;opacity:1}
+.tower.in .lyr:nth-child(1){transition-delay:.05s}.tower.in .lyr:nth-child(2){transition-delay:.16s}
+.tower.in .lyr:nth-child(3){transition-delay:.27s}.tower.in .lyr:nth-child(4){transition-delay:.38s}
+.tower.in .lyr:nth-child(5){transition-delay:.49s}.tower.in .lyr:nth-child(6){transition-delay:.6s}
+
+/* TIMELINE */
+.tray{padding:100px 0}
+.timeline{position:relative;margin:44px 0 0 8px;border-left:2px solid var(--paper-2);max-width:740px}
+.tl{position:relative;padding:0 0 38px 34px}
+.tl:last-child{padding-bottom:0}
+.tl::before{content:"";position:absolute;left:-9px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--ochre);border:3px solid var(--paper)}
+.tl .yr{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--ochre-deep)}
+.tl h3{font-family:var(--serif);font-weight:500;font-size:21px;margin:2px 0 4px;letter-spacing:-.01em}
+.tl p{font-size:15px;max-width:54ch}
+
+/* VALUES */
+.values{padding:100px 0;background:var(--ink);color:var(--paper)}
+.values .eyebrow{color:var(--ochre)}
+.values h2{color:var(--paper)}
+.val-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:46px;background:rgba(244,239,230,.12);
+  border:1px solid rgba(244,239,230,.12);border-radius:14px;overflow:hidden}
+.val{background:var(--ink);padding:28px 24px;transition:.3s}
+.val:hover{background:var(--ink-2)}
+.val .n{font-family:var(--serif);font-style:italic;color:var(--ochre);font-size:16px;margin-bottom:12px}
+.val h3{font-family:var(--serif);font-weight:500;font-size:19px;color:var(--paper);margin-bottom:7px;letter-spacing:-.01em}
+.val p{font-size:13.5px;color:rgba(244,239,230,.62);line-height:1.5}
+
+/* TEAM */
+.team{padding:100px 0}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:46px}
+.member{background:#fffdf8;border:1px solid var(--line);border-radius:14px;padding:28px 24px;text-align:center;transition:.3s}
+.member:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(23,21,15,.08)}
+.member .av{width:74px;height:74px;border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:26px;color:var(--paper);background:linear-gradient(135deg,var(--ochre-lite),var(--ochre-deep))}
+.member h3{font-family:var(--serif);font-weight:500;font-size:19px}
+.member .role{font-size:13px;color:var(--ochre-deep);font-weight:600;letter-spacing:.02em;margin:3px 0 10px}
+.member p{font-size:13.5px;line-height:1.5}
+
+/* CTA band */
+.ctaband{padding:96px 0;background:var(--paper-2);text-align:center}
+.ctaband h2{max-width:18ch;margin:0 auto 14px}
+.ctaband p{font-size:18px;max-width:46ch;margin:0 auto 30px}
+.ctaband .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--ink);color:rgba(244,239,230,.7);padding:60px 0 40px}
+.foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;align-items:flex-start;padding-bottom:34px;border-bottom:1px solid rgba(244,239,230,.12)}
+.foot-brand{display:flex;align-items:center;gap:12px;color:var(--paper);font-weight:600;font-size:22px}
+.foot-brand svg{height:32px}
+.foot-tag{font-family:var(--serif);font-style:italic;color:rgba(244,239,230,.7);margin-top:12px;font-size:17px;max-width:34ch}
+.foot-links{display:flex;gap:40px;flex-wrap:wrap}
+.foot-links .col b{color:var(--paper);font-size:13px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:14px}
+.foot-links .col a{display:block;font-size:14.5px;margin-bottom:9px;color:rgba(244,239,230,.7)}
+.foot-links .col a:hover{color:var(--ochre-lite)}
+.foot-bot{margin-top:28px;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+@media(max-width:920px){
+  .phero .wrap{grid-template-columns:1fr}.phero-mark{order:-1;margin-bottom:6px}.phero-mark svg{width:170px}
+  .story .grid{grid-template-columns:1fr;gap:34px}
+  .val-grid{grid-template-columns:1fr 1fr}.team-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .nav-links{position:fixed;top:var(--nav-h);left:0;right:0;background:var(--paper);flex-direction:column;gap:0;padding:0 28px;max-height:0;overflow:hidden;transition:.3s;border-bottom:1px solid transparent}
+  .nav-links.open{max-height:420px;padding:14px 28px 24px;border-bottom-color:var(--line);box-shadow:0 20px 30px rgba(23,21,15,.08)}
+  .nav-links a{padding:13px 0;width:100%;border-bottom:1px solid var(--line)}
+  .nav-links .nav-cta{margin-top:14px;width:100%;justify-content:center}
+  .burger{display:flex}
+  .val-grid,.team-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+  .reveal{opacity:1;transform:none}.tower .lyr{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header id="hdr">
+  <div class="wrap">
+    <a href="index.html" class="brand" aria-label="Rogelia inicio">
+      <svg viewBox="0 0 130 150" aria-hidden="true"><g stroke="#17150F" stroke-width="24" fill="none" stroke-linejoin="round"><path d="M30 25 V128"/><path d="M30 25 H64 C87 25 99 37 99 51 C99 65 87 77 64 77 H30"/><path d="M58 73 L100 128"/></g></svg>
+      Rogelia
+    </a>
+    <nav class="nav-links" id="nav">
+      <a href="index.html#servicios">Servicios</a>
+      <a href="index.html#enfoque">Enfoque</a>
+      <a href="index.html#demo">Demo</a>
+      <a href="index.html#casos">Casos</a>
+      <a href="nosotros.html" class="active" aria-current="page">Nosotros</a>
+      <a href="index.html#contacto" class="btn btn-pri nav-cta">Hablemos</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="phero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Nosotros</span>
+      <h1>Detrás de cada capa,<br><em>hay personas.</em></h1>
+      <p class="neg">No somos una empresa de IA. Tampoco una consultora tradicional. Somos <b>el puente entre ambos mundos</b>: tecnología como herramienta, personas en el centro.</p>
+    </div>
+    <div class="phero-mark">
+      <svg viewBox="0 0 130 150" aria-label="Rogelia">
+        <defs><linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C8893F"/><stop offset="1" stop-color="#17150F"/></linearGradient>
+          <mask id="pm"><rect x="-5" y="0" width="140" height="150" fill="#fff"/><g stroke="#000" stroke-width="4.4"><line x1="-5" y1="42" x2="135" y2="42"/><line x1="-5" y1="59" x2="135" y2="59"/><line x1="-5" y1="76" x2="135" y2="76"/><line x1="-5" y1="93" x2="135" y2="93"/><line x1="-5" y1="110" x2="135" y2="110"/></g></mask></defs>
+        <g mask="url(#pm)"><g stroke="url(#pg)" stroke-width="20" fill="none" stroke-linejoin="round"><path d="M30 25 V128"/><path d="M30 25 H64 C87 25 99 37 99 51 C99 65 87 77 64 77 H30"/><path d="M58 73 L100 128"/></g></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- STORY / NOMBRE -->
+<section class="story">
+  <div class="wrap">
+    <div class="grid">
+      <div class="reveal">
+        <span class="eyebrow">Por qué Rogelia</span>
+        <h2>Un nombre que ya<br>es una promesa.</h2>
+        <p>El rogel se construye capa sobre capa: cada una aporta lo suyo y el resultado es mucho más que la suma. Así trabajamos nosotros.</p>
+        <p>Experiencia, procesos, tecnología, IA, creatividad y conocimiento del negocio se apilan hasta dar algo sólido. Por eso el nombre es cálido y humano — porque ese es el centro de todo lo que hacemos.</p>
+      </div>
+      <div class="tower reveal">
+        <div class="lyr" style="background:#3A2A18">Experiencia</div>
+        <div class="lyr" style="background:#5A3C1E">Procesos</div>
+        <div class="lyr" style="background:#7C5022">Conocimiento del negocio</div>
+        <div class="lyr" style="background:#9C6427">Creatividad</div>
+        <div class="lyr" style="background:#C8893F">Inteligencia artificial</div>
+        <div class="lyr" style="background:#E7B070;color:#3A2A18">Resultados</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAYECTORIA / LINEA DE TIEMPO -->
+<section class="tray">
+  <div class="wrap">
+    <span class="eyebrow reveal">Trayectoria</span>
+    <h2 class="reveal">Cada año sumó<br>una capa más.</h2>
+    <div class="timeline">
+      <div class="tl reveal"><div class="yr">2012</div><h3>El origen</h3><p>Nacemos acompañando a empresas a ordenar sus procesos, mucho antes de que la IA fuera tendencia.</p></div>
+      <div class="tl reveal"><div class="yr">2016</div><h3>Datos para decidir</h3><p>Sumamos analítica y tableros: ayudamos a que las decisiones se tomen con información, no con intuición.</p></div>
+      <div class="tl reveal"><div class="yr">2019</div><h3>Automatización</h3><p>Empezamos a quitar trabajo repetitivo de encima de los equipos para que se enfoquen en lo que importa.</p></div>
+      <div class="tl reveal"><div class="yr">2021</div><h3>La capa de IA</h3><p>Incorporamos inteligencia artificial aplicada — siempre sobre bases sólidas, nunca como atajo.</p></div>
+      <div class="tl reveal"><div class="yr">Hoy</div><h3>El puente</h3><p>Un equipo que une experiencia humana y tecnología para llevar empresas al siguiente nivel.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- VALORES -->
+<section class="values">
+  <div class="wrap">
+    <span class="eyebrow reveal">En qué creemos</span>
+    <h2 class="reveal" style="color:var(--paper)">Siete valores que<br>no negociamos.</h2>
+    <div class="val-grid reveal">
+      <div class="val"><div class="n">01</div><h3>Cercanía</h3><p>Hablamos claro y estamos cuando se nos necesita.</p></div>
+      <div class="val"><div class="n">02</div><h3>Inteligencia práctica</h3><p>Soluciones que funcionan, no que lucen bien en papel.</p></div>
+      <div class="val"><div class="n">03</div><h3>Innovación útil</h3><p>Tecnología solo cuando suma valor real al negocio.</p></div>
+      <div class="val"><div class="n">04</div><h3>Experiencia</h3><p>Años de campo detrás de cada decisión que tomamos.</p></div>
+      <div class="val"><div class="n">05</div><h3>Confianza</h3><p>Decimos lo que se puede hacer y lo que no.</p></div>
+      <div class="val"><div class="n">06</div><h3>Evolución continua</h3><p>Aprendemos y mejoramos con cada proyecto.</p></div>
+      <div class="val"><div class="n">07</div><h3>Simplicidad</h3><p>Quitamos lo que sobra para que todo se entienda.</p></div>
+      <div class="val" style="background:linear-gradient(135deg,#9C6427,#3A2A18);display:flex;align-items:center">
+        <p style="color:var(--ochre-lite);font-family:var(--serif);font-style:italic;font-size:17px">“Modernos, pero serios. Tecnología, pero personas.”</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section class="team">
+  <div class="wrap">
+    <span class="eyebrow reveal">El equipo</span>
+    <h2 class="reveal">Gente con criterio,<br>no solo con herramientas.</h2>
+    <div class="team-grid">
+      <div class="member reveal"><div class="av">RA</div><h3>Nombre Apellido</h3><div class="role">Fundación & Estrategia</div><p>Define el rumbo y traduce el negocio en decisiones.</p></div>
+      <div class="member reveal"><div class="av">MC</div><h3>Nombre Apellido</h3><div class="role">Dirección de IA</div><p>Lleva la inteligencia artificial del concepto a la práctica.</p></div>
+      <div class="member reveal"><div class="av">JP</div><h3>Nombre Apellido</h3><div class="role">Procesos & Datos</div><p>Ordena la base para que todo lo demás escale.</p></div>
+      <div class="member reveal"><div class="av">LS</div><h3>Nombre Apellido</h3><div class="role">Diseño & Experiencia</div><p>Hace que lo complejo se vuelva simple y claro.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="ctaband">
+  <div class="wrap reveal">
+    <span class="eyebrow" style="justify-content:center;display:flex">Hablemos</span>
+    <h2>¿Listos para sumar<br>la próxima capa?</h2>
+    <p>Contanos en qué estás. Te damos una primera lectura honesta de tu caso, sin compromiso.</p>
+    <div class="cta">
+      <a href="index.html#contacto" class="btn btn-pri">Hablemos de tu negocio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="index.html#enfoque" class="btn btn-ghost">Ver el método</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 130 150" aria-hidden="true"><defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E7B070"/><stop offset="1" stop-color="#C8893F"/></linearGradient><mask id="fm"><rect x="-5" y="0" width="140" height="150" fill="#fff"/><g stroke="#000" stroke-width="4.4"><line x1="-5" y1="42" x2="135" y2="42"/><line x1="-5" y1="59" x2="135" y2="59"/><line x1="-5" y1="76" x2="135" y2="76"/><line x1="-5" y1="93" x2="135" y2="93"/><line x1="-5" y1="110" x2="135" y2="110"/></g></mask></defs><g mask="url(#fm)"><g stroke="url(#fg)" stroke-width="20" fill="none" stroke-linejoin="round"><path d="M30 25 V128"/><path d="M30 25 H64 C87 25 99 37 99 51 C99 65 87 77 64 77 H30"/><path d="M58 73 L100 128"/></g></g></svg>
+          Rogelia
+        </div>
+        <p class="foot-tag">Capas de conocimiento que generan resultados.</p>
+      </div>
+      <div class="foot-links">
+        <div class="col"><b>Navegar</b><a href="index.html#servicios">Servicios</a><a href="index.html#enfoque">Enfoque</a><a href="index.html#demo">Demo</a><a href="index.html#casos">Casos</a><a href="nosotros.html">Nosotros</a></div>
+        <div class="col"><b>Contacto</b><a href="mailto:hola@rogelia.com">hola@rogelia.com</a><a href="index.html#contacto">Escribinos</a></div>
+      </div>
+    </div>
+    <div class="foot-bot"><span>© <span id="yr"></span> Rogelia. Todos los derechos reservados.</span><span>El puente entre personas y tecnología.</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hdr=document.getElementById('hdr'), nav=document.getElementById('nav'), burger=document.getElementById('burger');
+  function onScroll(){ hdr.classList.toggle('scrolled', window.scrollY>20); }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+  burger.addEventListener('click',function(){ nav.classList.toggle('open'); });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(){ nav.classList.remove('open'); }); });
+  if('IntersectionObserver' in window && !reduce){
+    var ro=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target);} }); },{threshold:.14});
+    document.querySelectorAll('.reveal,.tower').forEach(function(el){ ro.observe(el); });
+  } else { document.querySelectorAll('.reveal,.tower').forEach(function(el){ el.classList.add('in'); }); }
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
