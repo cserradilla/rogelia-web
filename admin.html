@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin - Rogelia CMS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#17150F; --ink-2:#221F16; --ink-soft:#4A4438; --paper:#F4EFE6; --paper-2:#ECE3D2;
+  --arena:#E3D6BE; --ochre:#C8893F; --ochre-lite:#E7B070; --ochre-deep:#A2641F;
+  --line:rgba(23,21,15,.13); --good:#5E7A3A; --bad:#9E3B2E;
+  --serif:"Fraunces",Georgia,serif; --sans:"Hanken Grotesk",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;font-size:16px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+
+/* Login */
+#loginScreen{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--ink),var(--ink-2))}
+.login-box{background:var(--paper);padding:48px;border-radius:16px;width:100%;max-width:420px;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+.login-box h1{font-family:var(--serif);font-size:32px;margin-bottom:8px;color:var(--ink)}
+.login-box p{color:var(--ink-soft);margin-bottom:28px}
+.field{margin-bottom:20px}
+.field label{display:block;font-size:13.5px;font-weight:600;margin-bottom:7px;color:var(--ink)}
+.field input,.field textarea,.field select{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:9px;font-family:var(--sans);font-size:15.5px;background:var(--paper);color:var(--ink);transition:.2s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--ochre);box-shadow:0 0 0 3px rgba(200,137,63,.15)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:600;font-size:15.5px;padding:14px 26px;border-radius:100px;transition:.25s ease;cursor:pointer;border:1px solid transparent}
+.btn-pri{background:var(--ink);color:var(--paper);width:100%}
+.btn-pri:hover{background:var(--ochre-deep)}
+.error{color:var(--bad);font-size:13.5px;margin-top:12px;display:none}
+.error.show{display:block}
+
+/* Admin Panel */
+#adminPanel{display:none}
+header{background:var(--ink);color:var(--paper);padding:20px 0}
+header .wrap{display:flex;justify-content:space-between;align-items:center}
+header h1{font-family:var(--serif);font-size:24px}
+header nav{display:flex;gap:14px}
+header nav button{background:rgba(244,239,230,.1);border:none;color:var(--paper);padding:10px 18px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:500;transition:.2s}
+header nav button:hover{background:rgba(244,239,230,.2)}
+header nav button.active{background:var(--ochre);color:var(--ink)}
+
+.tabs{display:flex;gap:10px;margin:28px 0 0;flex-wrap:wrap}
+.tab-btn{padding:11px 20px;border:1px solid var(--line);background:#fffdf8;border-radius:10px;cursor:pointer;font-weight:500;font-size:14.5px;transition:.2s}
+.tab-btn:hover{border-color:var(--ochre)}
+.tab-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.section-panel{display:none;margin-top:28px;background:#fffdf8;border:1px solid var(--line);border-radius:14px;padding:32px}
+.section-panel.active{display:block}
+.section-panel h2{font-family:var(--serif);font-size:26px;margin-bottom:24px;color:var(--ink)}
+
+.subsection{margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--line)}
+.subsection:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.subsection h3{font-family:var(--serif);font-size:19px;margin-bottom:18px;color:var(--ochre-deep)}
+
+.array-item{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px;margin-bottom:16px;position:relative}
+.array-item .remove-btn{position:absolute;top:12px;right:12px;background:var(--bad);color:#fff;border:none;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:16px;line-height:1;transition:.2s}
+.array-item .remove-btn:hover{opacity:.85}
+.add-btn{background:transparent;border:2px dashed var(--line);color:var(--ink-soft);padding:14px;width:100%;border-radius:10px;cursor:pointer;font-weight:600;transition:.2s}
+.add-btn:hover{border-color:var(--ochre);color:var(--ochre-deep)}
+
+.actions{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+.actions .btn{min-width:160px}
+.btn-sec{background:var(--paper-2);color:var(--ink)}
+.btn-sec:hover{background:var(--arena)}
+
+.toast{position:fixed;bottom:28px;right:28px;background:var(--good);color:#fff;padding:16px 24px;border-radius:10px;font-weight:600;transform:translateY(100px);opacity:0;transition:.3s;z-index:1000}
+.toast.show{transform:none;opacity:1}
+.toast.error{background:var(--bad)}
+
+@media(max-width:768px){
+  header .wrap{flex-direction:column;gap:16px;text-align:center}
+  .tabs{justify-content:center}
+  .actions{flex-direction:column}
+  .actions .btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="loginScreen">
+  <div class="login-box">
+    <h1>Rogelia CMS</h1>
+    <p>Ingresá para editar el contenido</p>
+    <form id="loginForm">
+      <div class="field">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" required>
+      </div>
+      <button type="submit" class="btn btn-pri">Ingresar</button>
+      <div class="error" id="loginError">Contraseña incorrecta</div>
+    </form>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel">
+  <header>
+    <div class="wrap">
+      <h1>Rogelia CMS</h1>
+      <nav>
+        <button onclick="showPreview()">Ver sitio</button>
+        <button onclick="logout()">Salir</button>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="wrap">
+    <div class="tabs" id="tabs"></div>
+    
+    <div id="panels"></div>
+    
+    <div class="actions">
+      <button class="btn btn-pri" onclick="saveChanges()">Guardar cambios</button>
+      <button class="btn btn-sec" onclick="resetChanges()">Descartar</button>
+      <button class="btn btn-sec" onclick="exportConfig()">Exportar JSON</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let config = null;
+let originalConfig = null;
+const sections = [
+  {id:'site', label:'Sitio'},
+  {id:'hero', label:'Hero'},
+  {id:'manifiesto', label:'Manifiesto'},
+  {id:'servicios', label:'Servicios'},
+  {id:'enfoque', label:'Enfoque'},
+  {id:'demo', label:'Demo'},
+  {id:'trayectoria', label:'Trayectoria'},
+  {id:'casos', label:'Casos'},
+  {id:'contacto', label:'Contacto'},
+  {id:'nosotros', label:'Nosotros'},
+  {id:'footer', label:'Footer'}
+];
+
+// Login
+document.getElementById('loginForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const pwd = document.getElementById('password').value;
+  fetch('config.json')
+    .then(r=>r.json())
+    .then(data=>{
+      if(pwd === data.admin.password){
+        config = JSON.parse(JSON.stringify(data));
+        originalConfig = JSON.parse(JSON.stringify(data));
+        document.getElementById('loginScreen').style.display='none';
+        document.getElementById('adminPanel').style.display='block';
+        initAdmin();
+      }else{
+        document.getElementById('loginError').classList.add('show');
+      }
+    })
+    .catch(err=>{
+      console.error(err);
+      document.getElementById('loginError').textContent='Error al cargar config';
+      document.getElementById('loginError').classList.add('show');
+    });
+});
+
+function initAdmin(){
+  const tabsContainer = document.getElementById('tabs');
+  const panelsContainer = document.getElementById('panels');
+  
+  tabsContainer.innerHTML = sections.map(s => 
+    `<button class="tab-btn ${s.id==='site'?'active':''}" data-section="${s.id}">${s.label}</button>`
+  ).join('');
+  
+  panelsContainer.innerHTML = sections.map(s => 
+    `<div class="section-panel ${s.id==='site'?'active':''}" id="panel-${s.id}">${buildPanel(s.id)}</div>`
+  ).join('');
+  
+  tabsContainer.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      tabsContainer.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      panelsContainer.querySelectorAll('.section-panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(`panel-${btn.dataset.section}`).classList.add('active');
+    });
+  });
+}
+
+function buildPanel(sectionId){
+  const section = config[sectionId];
+  if(!section) return '<p>Sección no encontrada</p>';
+  
+  let html = `<h2>${sections.find(s=>s.id===sectionId).label}</h2>`;
+  
+  for(const key in section){
+    if(key === 'password') continue;
+    const value = section[key];
+    const fieldId = `${sectionId}-${key}`;
+    
+    if(Array.isArray(value)){
+      html += `<div class="subsection"><h3>${formatLabel(key)}</h3>`;
+      value.forEach((item, idx)=>{
+        html += `<div class="array-item" data-array="${key}" data-index="${idx}">`;
+        if(typeof item === 'object'){
+          for(const k in item){
+            html += buildField(fieldId, k, item[k], true, idx);
+          }
+        } else {
+          html += buildField(fieldId, key, item, true, idx);
+        }
+        html += `<button class="remove-btn" onclick="removeArrayItem('${sectionId}','${key}',${idx})">×</button></div>`;
+      });
+      html += `<button class="add-btn" onclick="addArrayItem('${sectionId}','${key}')">+ Agregar</button></div>`;
+    } else if(typeof value === 'object' && value !== null){
+      html += `<div class="subsection"><h3>${formatLabel(key)}</h3>`;
+      for(const k in value){
+        html += buildField(fieldId, k, value[k]);
+      }
+      html += '</div>';
+    } else {
+      html += buildField(sectionId, key, value);
+    }
+  }
+  
+  return html;
+}
+
+function buildField(sectionId, key, value, isArray=false, idx=null){
+  const fieldId = isArray ? `${sectionId}-${key}-${idx}` : `${sectionId}-${key}`;
+  const label = formatLabel(key);
+  const val = escapeHtml(String(value));
+  
+  if(key.toLowerCase().includes('email')){
+    return `<div class="field"><label>${label}</label><input type="email" data-path="${sectionId}|${key}" value="${val}" ${isArray?`data-idx="${idx}"`:''}></div>`;
+  }
+  if(key.toLowerCase().includes('url') || key.toLowerCase().includes('web')){
+    return `<div class="field"><label>${label}</label><input type="url" data-path="${sectionId}|${key}" value="${val}" ${isArray?`data-idx="${idx}"`:''}></div>`;
+  }
+  if(key.toLowerCase().includes('color')){
+    return `<div class="field"><label>${label}</label><input type="color" data-path="${sectionId}|${key}" value="${val}" ${isArray?`data-idx="${idx}"`:''}></div>`;
+  }
+  if(key.toLowerCase().includes('desc') || key.toLowerCase().includes('msg') || key.toLowerCase().includes('quote') || key.toLowerCase().includes('closing')){
+    return `<div class="field"><label>${label}</label><textarea data-path="${sectionId}|${key}" rows="3" ${isArray?`data-idx="${idx}"`:''}>${val}</textarea></div>`;
+  }
+  if(typeof value === 'number'){
+    return `<div class="field"><label>${label}</label><input type="number" data-path="${sectionId}|${key}" value="${value}" ${isArray?`data-idx="${idx}"`:''}></div>`;
+  }
+  return `<div class="field"><label>${label}</label><input type="text" data-path="${sectionId}|${key}" value="${val}" ${isArray?`data-idx="${idx}"`:''}></div>`;
+}
+
+function formatLabel(key){
+  return key.replace(/([A-Z])/g,' $1').replace(/^./,s=>s.toUpperCase());
+}
+
+function escapeHtml(text){
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// Event delegation for field changes
+document.addEventListener('input', function(e){
+  if(e.target.dataset.path){
+    const path = e.target.dataset.path.split('|');
+    const idx = e.target.dataset.idx;
+    let value = e.target.type === 'number' ? parseFloat(e.target.value) : e.target.value;
+    
+    if(idx !== undefined){
+      config[path[0]][path[1]][parseInt(idx)] = typeof config[path[0]][path[1]][parseInt(idx)] === 'object' 
+        ? {...config[path[0]][path[1]][parseInt(idx)], [path[2]]: value}
+        : value;
+    } else {
+      config[path[0]][path[1]] = value;
+    }
+  }
+});
+
+function removeArrayItem(sectionId, key, idx){
+  config[sectionId][key].splice(idx, 1);
+  refreshPanel(sectionId);
+}
+
+function addArrayItem(sectionId, key){
+  const template = config[sectionId][key][0];
+  if(typeof template === 'object'){
+    const newItem = {};
+    for(const k in template){
+      newItem[k] = typeof template[k] === 'number' ? 0 : '';
+    }
+    config[sectionId][key].push(newItem);
+  } else {
+    config[sectionId][key].push('');
+  }
+  refreshPanel(sectionId);
+}
+
+function refreshPanel(sectionId){
+  document.getElementById(`panel-${sectionId}`).innerHTML = buildPanel(sectionId);
+}
+
+function saveChanges(){
+  fetch('config.json', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(config)
+  })
+  .then(r=>r.ok ? r.json() : Promise.reject('Error'))
+  .then(()=>{
+    showToast('Cambios guardados correctamente');
+    originalConfig = JSON.parse(JSON.stringify(config));
+  })
+  .catch(()=>{
+    // Fallback: download file
+    downloadFile(JSON.stringify(config, null, 2), 'config.json');
+    showToast('Descargá el config.json y reemplazalo manualmente', 'error');
+  });
+}
+
+function resetChanges(){
+  if(confirm('¿Descartar todos los cambios?')){
+    config = JSON.parse(JSON.stringify(originalConfig));
+    location.reload();
+  }
+}
+
+function exportConfig(){
+  downloadFile(JSON.stringify(config, null, 2), 'config.json');
+}
+
+function downloadFile(content, filename){
+  const blob = new Blob([content], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function showPreview(){
+  window.open('index.html', '_blank');
+}
+
+function logout(){
+  location.reload();
+}
+
+function showToast(msg, type='success'){
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.className = 'toast show' + (type==='error'?' error':'');
+  setTimeout(()=>toast.classList.remove('show'), 3000);
+}
+</script>
+</body>
+</html>
