@@ -1,0 +1,178 @@
+{
+  "site": {
+    "name": "Rogelia",
+    "tagline": "Capas de conocimiento que generan resultados.",
+    "email": "hola@rogelia.com",
+    "website": "rogelia.com",
+    "description": "Rogelia — Estrategia, IA y negocio. El puente entre las personas y la tecnología.",
+    "formspreeId": ""
+  },
+  "hero": {
+    "eyebrow": "Estrategia · IA · Negocio",
+    "title": "Capas de conocimiento que generan <em>resultados.</em>",
+    "subtitle": "Somos el puente entre las personas y la tecnología. Llevamos tu empresa al siguiente nivel con inteligencia artificial aplicada con criterio — no con humo.",
+    "ctaPrimary": "Hablemos de tu negocio",
+    "ctaSecondary": "Ver el método",
+    "trustText": "+12 años traduciendo tecnología en decisiones de negocio."
+  },
+  "manifiesto": {
+    "eyebrow": "Cómo pensamos",
+    "title": "La IA es un multiplicador.",
+    "lines": [
+      "Multiplica al que sabe.",
+      "Multiplica al que ejecuta.",
+      "Multiplica al que entiende su negocio.",
+      "Pero también multiplica los errores del que no tiene estrategia.",
+      "En definitiva: si sos malo, multiplica lo malo."
+    ],
+    "closing": "Por eso Rogelia no vende tecnología: vende <b>criterio</b>. Primero entendemos tu negocio; después sumamos la capa de IA que potencia lo que ya está bien construido."
+  },
+  "servicios": {
+    "eyebrow": "Qué hacemos",
+    "title": "Soluciones que se apoyan en tu negocio,<br>no al revés.",
+    "items": [
+      {"index": "01", "title": "Estrategia de IA", "desc": "Diagnóstico y hoja de ruta. Identificamos dónde la IA suma de verdad — y dónde no — antes de tocar nada."},
+      {"index": "02", "title": "Automatización de procesos", "desc": "Menos tareas repetitivas, más foco en lo que importa. Ordenamos el flujo y lo volvemos eficiente."},
+      {"index": "03", "title": "Datos para decidir", "desc": "Información dispersa que se convierte en decisiones claras, con tableros que tu equipo realmente usa."},
+      {"index": "04", "title": "Acompañamiento", "desc": "Implementamos junto a tu equipo y nos quedamos hasta que funcione. Transferimos el conocimiento."}
+    ]
+  },
+  "enfoque": {
+    "eyebrow": "Nuestro método",
+    "title": "Construimos capa<br>sobre capa.",
+    "steps": [
+      {"num": "01", "title": "Diagnóstico", "desc": "Entendemos el negocio, su gente y sus cuellos de botella reales."},
+      {"num": "02", "title": "Estrategia", "desc": "Definimos el rumbo y priorizamos por impacto, no por moda."},
+      {"num": "03", "title": "Procesos", "desc": "Ordenamos la base. Sin cimientos sólidos, nada escala."},
+      {"num": "04", "title": "Inteligencia artificial", "desc": "La capa que multiplica lo que ya funciona bien."},
+      {"num": "05", "title": "Resultados", "desc": "Medibles, sostenibles y en manos de tu equipo."}
+    ],
+    "towerLayers": [
+      {"text": "Diagnóstico", "bg": "#3A2A18"},
+      {"text": "Estrategia", "bg": "#6E461F"},
+      {"text": "Procesos", "bg": "#9C6427"},
+      {"text": "Inteligencia artificial", "bg": "#C8893F"},
+      {"text": "Resultados", "bg": "#E7B070", "color": "#3A2A18"}
+    ]
+  },
+  "demo": {
+    "tag": "Demo interactiva",
+    "title": "El Multiplicador",
+    "desc": "Movés los controles y ves la idea en acción: la IA amplifica tu base. Con buena estrategia, despega. Sin ella, multiplica el problema.",
+    "controls": [
+      {"id": "mEst", "label": "Estrategia", "hint": "¿Sabés a dónde vas y por qué?", "default": 60},
+      {"id": "mEje", "label": "Ejecución del equipo", "hint": "Capacidad real de hacer que las cosas pasen.", "default": 60},
+      {"id": "mNeg", "label": "Conocimiento del negocio", "hint": "Qué tan profundo entendés tu propio terreno.", "default": 60},
+      {"id": "mIa", "label": "Intensidad de IA", "hint": "Cuánta IA le sumás encima de tu base.", "default": 50, "isPercent": true}
+    ],
+    "footnote": "Modelo ilustrativo: el resultado se aleja del punto neutro (50) en proporción a tu base, amplificado por la intensidad de IA. Es exactamente la lógica del manifiesto — y un ejemplo de las herramientas a medida que construimos para clientes."
+  },
+  "trayectoria": {
+    "eyebrow": "Trayectoria",
+    "title": "Solidez que se mide.",
+    "stats": [
+      {"prefix": "+", "target": 12, "suffix": "", "label": "Años de experiencia"},
+      {"prefix": "+", "target": 80, "suffix": "", "label": "Proyectos entregados"},
+      {"prefix": "", "target": 3.4, "suffix": "×", "label": "Retorno promedio", "decimals": 1},
+      {"prefix": "", "target": 100, "suffix": "%", "label": "Foco en resultados"}
+    ]
+  },
+  "casos": {
+    "eyebrow": "Lo que dicen",
+    "title": "Empresas que ya<br>subieron de nivel.",
+    "testimonios": [
+      {"quote": "Ordenaron procesos que teníamos enredados hace años y recién ahí sumaron IA. El orden importó tanto como la tecnología.", "initials": "MG", "name": "María González", "role": "Directora de Operaciones · Retail"},
+      {"quote": "No nos vendieron humo. Nos dijeron qué automatizar y qué no. Eso nos ahorró tiempo y plata.", "initials": "JR", "name": "Javier Ruiz", "role": "Fundador · Logística"},
+      {"quote": "El equipo quedó capacitado para seguir solo. Acompañaron hasta que de verdad funcionaba.", "initials": "LF", "name": "Lucía Ferreyra", "role": "Gerente General · Servicios"}
+    ]
+  },
+  "contacto": {
+    "eyebrow": "Hablemos",
+    "title": "Llevemos tu empresa<br>al siguiente nivel.",
+    "desc": "Contanos en qué estás. Te respondemos con una primera lectura honesta de tu caso — sin compromiso.",
+    "directContact": [
+      {"type": "email", "value": "hola@rogelia.com", "label": "hola@rogelia.com"},
+      {"type": "web", "value": "https://rogelia.com", "label": "rogelia.com"}
+    ],
+    "formFields": [
+      {"id": "fName", "label": "Nombre", "placeholder": "", "required": true},
+      {"id": "fEmail", "label": "Email", "placeholder": "", "type": "email", "required": true},
+      {"id": "fComp", "label": "Empresa", "placeholder": "", "required": true},
+      {"id": "fMsg", "label": "¿En qué estás pensando?", "placeholder": "", "type": "textarea", "required": true}
+    ],
+    "successTitle": "¡Gracias!",
+    "successMsg": "Abrimos tu cliente de correo con el mensaje listo. Te respondemos a la brevedad."
+  },
+  "nosotros": {
+    "hero": {
+      "eyebrow": "Nosotros",
+      "title": "Detrás de cada capa,<br><em>hay personas.</em>",
+      "desc": "No somos una empresa de IA. Tampoco una consultora tradicional. Somos <b>el puente entre ambos mundos</b>: tecnología como herramienta, personas en el centro."
+    },
+    "story": {
+      "eyebrow": "Por qué Rogelia",
+      "title": "Un nombre que ya<br>es una promesa.",
+      "paragraphs": [
+        "El rogel se construye capa sobre capa: cada una aporta lo suyo y el resultado es mucho más que la suma. Así trabajamos nosotros.",
+        "Experiencia, procesos, tecnología, IA, creatividad y conocimiento del negocio se apilan hasta dar algo sólido. Por eso el nombre es cálido y humano — porque ese es el centro de todo lo que hacemos."
+      ],
+      "towerLayers": [
+        {"text": "Experiencia", "bg": "#3A2A18"},
+        {"text": "Procesos", "bg": "#5A3C1E"},
+        {"text": "Conocimiento del negocio", "bg": "#7C5022"},
+        {"text": "Creatividad", "bg": "#9C6427"},
+        {"text": "Inteligencia artificial", "bg": "#C8893F"},
+        {"text": "Resultados", "bg": "#E7B070", "color": "#3A2A18"}
+      ]
+    },
+    "timeline": {
+      "eyebrow": "Trayectoria",
+      "title": "Cada año sumó<br>una capa más.",
+      "events": [
+        {"year": "2012", "title": "El origen", "desc": "Nacemos acompañando a empresas a ordenar sus procesos, mucho antes de que la IA fuera tendencia."},
+        {"year": "2016", "title": "Datos para decidir", "desc": "Sumamos analítica y tableros: ayudamos a que las decisiones se tomen con información, no con intuición."},
+        {"year": "2019", "title": "Automatización", "desc": "Empezamos a quitar trabajo repetitivo de encima de los equipos para que se enfoquen en lo que importa."},
+        {"year": "2021", "title": "La capa de IA", "desc": "Incorporamos inteligencia artificial aplicada — siempre sobre bases sólidas, nunca como atajo."},
+        {"year": "Hoy", "title": "El puente", "desc": "Un equipo que une experiencia humana y tecnología para llevar empresas al siguiente nivel."}
+      ]
+    },
+    "valores": {
+      "eyebrow": "En qué creemos",
+      "title": "Siete valores que<br>no negociamos.",
+      "items": [
+        {"num": "01", "title": "Cercanía", "desc": "Hablamos claro y estamos cuando se nos necesita."},
+        {"num": "02", "title": "Inteligencia práctica", "desc": "Soluciones que funcionan, no que lucen bien en papel."},
+        {"num": "03", "title": "Innovación útil", "desc": "Tecnología solo cuando suma valor real al negocio."},
+        {"num": "04", "title": "Experiencia", "desc": "Años de campo detrás de cada decisión que tomamos."},
+        {"num": "05", "title": "Confianza", "desc": "Decimos lo que se puede hacer y lo que no."},
+        {"num": "06", "title": "Evolución continua", "desc": "Aprendemos y mejoramos con cada proyecto."},
+        {"num": "07", "title": "Simplicidad", "desc": "Quitamos lo que sobra para que todo se entienda."}
+      ],
+      "closingQuote": "Modernos, pero serios. Tecnología, pero personas."
+    },
+    "equipo": {
+      "eyebrow": "El equipo",
+      "title": "Gente con criterio,<br>no solo con herramientas.",
+      "members": [
+        {"initials": "RA", "name": "Nombre Apellido", "role": "Fundación & Estrategia", "desc": "Define el rumbo y traduce el negocio en decisiones."},
+        {"initials": "MC", "name": "Nombre Apellido", "role": "Dirección de IA", "desc": "Lleva la inteligencia artificial del concepto a la práctica."},
+        {"initials": "JP", "name": "Nombre Apellido", "role": "Procesos & Datos", "desc": "Ordena la base para que todo lo demás escale."},
+        {"initials": "LS", "name": "Nombre Apellido", "role": "Diseño & Experiencia", "desc": "Hace que lo complejo se vuelva simple y claro."}
+      ]
+    },
+    "ctaBand": {
+      "eyebrow": "Hablemos",
+      "title": "¿Listos para sumar<br>la próxima capa?",
+      "desc": "Contanos en qué estás. Te damos una primera lectura honesta de tu caso, sin compromiso.",
+      "ctaPrimary": "Hablemos de tu negocio",
+      "ctaSecondary": "Ver el método"
+    }
+  },
+  "footer": {
+    "navLinks": ["Servicios", "Enfoque", "Demo", "Casos", "Nosotros"],
+    "closingText": "El puente entre personas y tecnología."
+  },
+  "admin": {
+    "password": "rogelia2024"
+  }
+}
